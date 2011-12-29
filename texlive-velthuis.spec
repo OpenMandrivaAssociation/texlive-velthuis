@@ -18,8 +18,6 @@ BuildRequires:	texlive-tlpkg
 Requires(pre):	texlive-tlpkg
 Requires(post):	texlive-kpathsea
 Requires:	texlive-xetex-devanagari
-Conflicts:	texlive-texmf <= 20110705-3
-Conflicts:	texlive-doc <= 20110705-3
 
 %description
 Frans Velthuis' preprocessor for Devanagari text, and fonts and
@@ -28,20 +26,12 @@ provide features that support Sanskrit, Hindi, Marathi, Nepali,
 and other languages typically printed in the Devanagari script.
 The fonts are available both in Metafont and Type 1 format.
 
-%pre
-    %_texmf_mktexlsr_pre
-
 %post
-    %_texmf_mktexlsr_post
-
-%preun
-    if [ $1 -eq 0 ]; then
-	%_texmf_mktexlsr_pre
-    fi
+    %{_sbindir}/texlive.post
 
 %postun
     if [ $1 -eq 0 ]; then
-	%_texmf_mktexlsr_post
+	%{_sbindir}/texlive.post
     fi
 
 #-----------------------------------------------------------------------
@@ -326,7 +316,6 @@ The fonts are available both in Metafont and Type 1 format.
 %doc %{_texmfdistdir}/doc/generic/velthuis/xetex-examples.tex
 %doc %{_texmfdistdir}/doc/generic/velthuis/xetex-misspaal.pdf
 %doc %{_texmfdistdir}/doc/generic/velthuis/xetex-misspaal.tex
-%doc %{_tlpkgobjdir}/*.tlpobj
 
 #-----------------------------------------------------------------------
 %prep
@@ -337,5 +326,3 @@ The fonts are available both in Metafont and Type 1 format.
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar fonts tex doc %{buildroot}%{_texmfdistdir}
-mkdir -p %{buildroot}%{_tlpkgobjdir}
-cp -fpa tlpkg/tlpobj/*.tlpobj %{buildroot}%{_tlpkgobjdir}
