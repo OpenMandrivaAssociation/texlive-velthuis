@@ -6,7 +6,7 @@
 # catalog-version 2.15.1
 Name:		texlive-velthuis
 Version:	2.15.1
-Release:	3
+Release:	4
 Summary:	Typeset Devanagari
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/language/devanagari/velthuis
