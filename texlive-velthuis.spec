@@ -3,7 +3,7 @@ Version:	66186
 Release:	1
 Summary:	Typeset Devanagari
 Group:		Publishing
-URL:		http://www.ctan.org/tex-archive/language/devanagari/velthuis
+URL:		https://www.ctan.org/tex-archive/language/devanagari/velthuis
 License:	GPL
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/velthuis.r%{version}.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/velthuis.doc.r%{version}.tar.xz
